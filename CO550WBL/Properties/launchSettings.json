@@ -11,7 +11,7 @@
     "CO550WBL": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7067;http://localhost:5152",
+      "applicationUrl": "https://localhost:7067",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
