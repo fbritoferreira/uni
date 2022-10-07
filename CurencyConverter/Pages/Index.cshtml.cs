@@ -8,6 +8,7 @@ public class IndexModel : PageModel
   private readonly ILogger<IndexModel> _logger;
   public static string? Amount { get; set; }
   public static string? PreviousValue { get; set; }
+  public static double ExchangeRate = 1.14;
 
   public IndexModel(ILogger<IndexModel> logger)
   {
@@ -30,18 +31,14 @@ public class IndexModel : PageModel
     ViewData["Amount"] = Amount;
     ViewData["PreviousValue"] = PreviousValue;
     Amount = null;
-
+    PreviousValue = null;
   }
 
   public void OnPost()
   {
     var amount = Request.Form["amount"];
-    var exchangeRate = 1.14;
-    var valueInEuros = Math.Round(ToDouble(amount) * exchangeRate, 2, MidpointRounding.ToEven);
-
-    Amount = valueInEuros.ToString();
+    Amount = Math.Round(ToDouble(amount) * ExchangeRate, 2, MidpointRounding.ToEven).ToString();
     PreviousValue = amount.ToString();
-
     Response.Redirect("/");
   }
 }

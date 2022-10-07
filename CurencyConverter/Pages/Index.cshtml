@@ -11,13 +11,14 @@
         </div>
         <form method="post">
             <div class="row">
-                <input required type="number" name="amount" class="form-control" id="inputpounds"
+                <input required type="text" name="amount" class="form-control" id="inputpounds"
                     aria-describedby="poundsinput" placeholder="Enter amount in £">
             </div>
             @if (ViewData["Amount"] != null)
             {
                 <div class="row mt-2">
-                    <p>The current value of £@ViewData["PreviousValue"] in euros is: @ViewData["Amount"]€</p>
+                    <p>The current value of £@ViewData["PreviousValue"] in euros is: <span
+                        style="font-weight: bold;">@ViewData["Amount"]€</span></p>
                 </div>
             }
             <div class="row mt-2">
