@@ -9,5 +9,6 @@ namespace CO550WBL.Models
     public int Credits { get; set; }
 
     public ICollection<Enrollment> Enrollments { get; set; }
+
   }
 }

@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="d-flex flex-column justify-content-evenly align-items-center">
+    <div class="col-md-6">
+        <div class="row text-center" style="margin-top: 250px">
+            <h1 class="display-6">Currency Converter</h1>
+        </div>
+        <form method="post">
+            <div class="row">
+                <input required type="number" name="amount" class="form-control" id="inputpounds"
+                    aria-describedby="poundsinput" placeholder="Enter amount in £">
+            </div>
+            @if (ViewData["Amount"] != null)
+            {
+                <div class="row mt-2">
+                    <p>The current value £@ViewData["PreviousValue"] in euros is: @ViewData["Amount"]€</p>
+                </div>
+            }
+            <div class="row mt-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>
